@@ -1,0 +1,18 @@
+<mvc:View
+    controllerName="ap.materialsales.controller.Sales"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+>
+    <Page id="page">
+        <content>
+            <Button
+                icon="sap-icon://customer-and-contacts"
+                text="Nav to Customers"
+                type="Transparent"
+                press="onNavToMaterials"
+            />
+            <Text text="SALES APP" />
+        </content>
+    </Page>
+</mvc:View>

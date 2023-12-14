@@ -10,6 +10,12 @@
         title="Material"
     >
         <content>
+            <Button
+                icon="sap-icon://activities"
+                type="Transparent"
+                press="onNavToSales"
+                text="Nav to Sales"
+            />
             <Table
                 id="materialTable"
                 items="{/MaterialSet}"

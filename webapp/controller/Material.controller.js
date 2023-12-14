@@ -30,6 +30,11 @@ sap.ui.define(
           .attachRouteMatched(this.onRouteMatched, this);
       },
 
+      //routing to second app
+      onNavToSales: function (oEvent) {
+        this.getOwnerComponent().getRouter().navTo("sales");
+      },
+
       //routing to detail page
 
       //routing
