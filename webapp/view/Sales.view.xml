@@ -23,8 +23,15 @@
                             text="Sales"
                             level="H2"
                         />
+                        <ToolbarSpacer />
+                        <Button
+                            tooltip="Filter"
+                            icon="sap-icon://filter"
+                            press="handleFilterButtonPressed"
+                        />
                     </OverflowToolbar>
                 </headerToolbar>
+
                 <columns>
                     <Column
                         minScreenWidth="Tablet"

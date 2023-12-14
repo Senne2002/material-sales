@@ -1,0 +1,65 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <ViewSettingsDialog confirm="handleFilterDialogConfirm">
+        <filterItems>
+            <ViewSettingsFilterItem
+                text="Sales number"
+                key="Vbeln"
+                multiSelect="false"
+            >
+                <items>
+                    <ViewSettingsItem
+                        text="1"
+                        key="1"
+                    />
+                    <ViewSettingsItem
+                        text="2"
+                        key="2"
+                    />
+                    <ViewSettingsItem
+                        text="3"
+                        key="3"
+                    />
+                    <ViewSettingsItem
+                        text="4"
+                        key="4"
+                    />
+                    <ViewSettingsItem
+                        text="5"
+                        key="5"
+                    />
+                    <ViewSettingsItem
+                        text="6"
+                        key="6"
+                    />
+                    <ViewSettingsItem
+                        text="7"
+                        key="7"
+                    />
+                    <ViewSettingsItem
+                        text="20000000"
+                        key="20000000"
+                    />
+                </items>
+            </ViewSettingsFilterItem>
+            <ViewSettingsFilterItem
+                text="Created by"
+                key="Ernam"
+                multiSelect="false"
+            >
+                <items>
+                    <ViewSettingsItem
+                        text="DEVSD-002"
+                        key="DEVSD-002"
+                    />
+                    <ViewSettingsItem
+                        text="RHAEUSLER"
+                        key="RHAEUSLER"
+                    />
+                </items>
+            </ViewSettingsFilterItem>
+        </filterItems>
+    </ViewSettingsDialog>
+</core:FragmentDefinition>
