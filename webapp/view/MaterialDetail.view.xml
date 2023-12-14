@@ -1,0 +1,50 @@
+<mvc:View
+    controllerName="ap.materialsales.controller.MaterialDetail"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+>
+    <Page
+        id="page"
+        title="Plants"
+    >
+        <content>
+            <Table
+                id="materialTable"
+                items="{/MaterialSet('')/PLANTS}"
+                headerText="Plants"
+            >
+                <columns>
+                    <Column width="12em">
+                        <VBox>
+                            <Text text="Material number" />
+                        </VBox>
+                    </Column>
+                    <Column width="12em">
+                        <VBox>
+                            <Text text="Plant" />
+                        </VBox>
+                    </Column>
+                    <Column width="12em">
+                        <VBox>
+                            <Text text="Plant name" />
+                        </VBox>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem
+                        type="Active"
+                        vAlign="Middle"
+                    >
+                        <cells>
+                            <ObjectIdentifier title="{Matnr}" />
+                            <Text text="{Werks}" />
+                            <Text text="{Name1}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,12 +1,13 @@
 <mvc:View
     controllerName="ap.materialsales.controller.Material"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
-    xmlns="sap.m"
 >
     <Page
         id="page"
-        title="{i18n>title}"
+        title="Material"
     >
         <content>
             <Table
@@ -67,8 +68,9 @@
                 </columns>
                 <items>
                     <ColumnListItem
-                        type="Active"
+                        type="Navigation"
                         vAlign="Middle"
+                        press=".onListItemPress"
                     >
                         <cells>
                             <ObjectIdentifier title="{Matnr}" />

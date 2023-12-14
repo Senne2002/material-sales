@@ -55,7 +55,8 @@
         "sap.ui.comp": {},
         "sap.ui.generic.app": {},
         "sap.ui.table": {},
-        "sap.ushell": {}
+        "sap.ushell": {},
+        "sap.uxap": {}
       }
     },
     "contentDensities": {
@@ -84,30 +85,36 @@
     },
     "routing": {
       "config": {
-        "routerClass": "sap.m.routing.Router",
+        "routerClass": "sap.f.routing.Router",
+        "type": "View",
         "viewType": "XML",
+        "path": "ap.materialsales.view",
+        "controlId": "fcl",
+        "transition": "slide",
+        "bypassed": {},
         "async": true,
-        "viewPath": "ap.materialsales.view",
-        "controlAggregation": "pages",
-        "controlId": "app",
         "clearControlAggregation": false
       },
       "routes": [
         {
-          "name": "RouteMaterial",
-          "pattern": ":?query:",
-          "target": [
-            "TargetMaterial"
-          ]
+          "pattern": ":?layout:",
+          "name": "master",
+          "target": ["master"]
+        },
+        {
+          "pattern": "detail/{material}/{layout}",
+          "name": "detail",
+          "target": ["master", "detail"]
         }
       ],
       "targets": {
-        "TargetMaterial": {
-          "viewType": "XML",
-          "transition": "slide",
-          "clearControlAggregation": false,
-          "viewId": "Material",
-          "viewName": "Material"
+        "master": {
+          "viewName": "Material",
+          "controlAggregation": "beginColumnPages"
+        },
+        "detail": {
+          "viewName": "MaterialDetail",
+          "controlAggregation": "midColumnPages"
         }
       }
     },
@@ -115,7 +122,7 @@
       "viewName": "ap.materialsales.view.App",
       "type": "XML",
       "async": true,
-      "id": "App"
+      "id": "fcl"
     }
   }
 }
