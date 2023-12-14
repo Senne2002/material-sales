@@ -1,0 +1,73 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <ViewSettingsDialog confirm="handleFilterDialogConfirm">
+        <filterItems>
+            <ViewSettingsFilterItem
+                text="Material description"
+                key="Maktx"
+                multiSelect="false"
+            >
+                <items>
+                    <ViewSettingsItem
+                        text="Touring frame-red"
+                        key="touring frame-red"
+                    />
+                    <ViewSettingsItem
+                        text="Touring frame-black"
+                        key="touring frame-black"
+                    />
+                </items>
+            </ViewSettingsFilterItem>
+            <ViewSettingsFilterItem
+                text="Group"
+                key="Matkl"
+                multiSelect="false"
+            >
+                <items>
+                    <ViewSettingsItem
+                        text="RAW"
+                        key="RAW"
+                    />
+                    <ViewSettingsItem
+                        text="OTH"
+                        key="OTH"
+                    />
+                </items>
+            </ViewSettingsFilterItem>
+            <ViewSettingsFilterItem
+                text="Type"
+                key="Mtart"
+                multiSelect="false"
+            >
+                <items>
+                    <ViewSettingsItem
+                        text="ROH"
+                        key="ROH"
+                    />
+                    <ViewSettingsItem
+                        text="OTH"
+                        key="OTH"
+                    />
+                </items>
+            </ViewSettingsFilterItem>
+            <ViewSettingsFilterItem
+                text="Industry"
+                key="Mbrsh"
+                multiSelect="false"
+            >
+                <items>
+                    <ViewSettingsItem
+                        text="M"
+                        key="M"
+                    />
+                    <ViewSettingsItem
+                        text="W"
+                        key="W"
+                    />
+                </items>
+            </ViewSettingsFilterItem>
+        </filterItems>
+    </ViewSettingsDialog>
+</core:FragmentDefinition>
