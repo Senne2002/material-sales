@@ -16,17 +16,29 @@
                 headerText="Plants"
             >
                 <columns>
-                    <Column width="12em">
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
                         <VBox>
                             <Text text="Material number" />
                         </VBox>
                     </Column>
-                    <Column width="12em">
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
                         <VBox>
                             <Text text="Plant" />
                         </VBox>
                     </Column>
-                    <Column width="12em">
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
                         <VBox>
                             <Text text="Plant name" />
                         </VBox>

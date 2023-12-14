@@ -18,6 +18,10 @@
                         text="Touring frame-black"
                         key="touring frame-black"
                     />
+                    <ViewSettingsItem
+                        text="T-shirt"
+                        key="t-shirt"
+                    />
                 </items>
             </ViewSettingsFilterItem>
             <ViewSettingsFilterItem

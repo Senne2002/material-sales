@@ -27,40 +27,72 @@
                             icon="sap-icon://filter"
                             press="handleFilterButtonPressed"
                         />
+                        <Button
+                            icon="sap-icon://excel-attachment"
+                            press="onExport"
+                        />
                     </OverflowToolbar>
                 </headerToolbar>
                 <columns>
-                    <Column width="12em">
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
                         <VBox>
                             <Text text="Material number" />
                         </VBox>
                     </Column>
-                    <Column width="12em">
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
                         <VBox>
                             <Text text="Description" />
                         </VBox>
                     </Column>
-                    <Column width="12em">
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
                         <VBox>
                             <Text text="Group" />
                         </VBox>
                     </Column>
-                    <Column width="12em">
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
                         <VBox>
                             <Text text="Type" />
                         </VBox>
                     </Column>
-                    <Column width="12em">
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
                         <VBox>
                             <Text text="Industry" />
                         </VBox>
                     </Column>
-                    <Column width="12em">
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
                         <VBox>
                             <Text text="Base UoM" />
                         </VBox>
                     </Column>
-                    <Column width="12em">
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
                         <VBox>
                             <Text text="Purchase UoM" />
                         </VBox>

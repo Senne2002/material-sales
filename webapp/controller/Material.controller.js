@@ -5,11 +5,21 @@ sap.ui.define(
     "sap/ui/model/Filter",
     "sap/ui/core/Fragment",
     "sap/f/library",
+    "sap/ui/export/Spreadsheet",
+    "sap/ui/export/library",
   ],
   /**
    * @param {typeof sap.ui.core.mvc.Controller} Controller
    */
-  function (Controller, Device, Filter, Fragment, fioriLibrary) {
+  function (
+    Controller,
+    Device,
+    Filter,
+    Fragment,
+    fioriLibrary,
+    Spreadsheet,
+    exportLibrary
+  ) {
     "use strict";
 
     return Controller.extend("ap.materialsales.controller.Material", {
@@ -105,6 +115,84 @@ sap.ui.define(
           this._mViewSettingsDialogs[sDialogFragmentName] = pDialog;
         }
         return pDialog;
+      },
+
+      //export to csv
+      onExport: function (oEvent) {
+        let aCols, oRowBinding, oSettings, oSheet, oTable;
+
+        oTable = this.getView().byId("materialTable");
+        oRowBinding = oTable.getBinding("items");
+        aCols = this.createColumnConfig();
+
+        oSettings = {
+          workbook: {
+            columns: aCols,
+            hierarchyLevel: "Level",
+          },
+          dataSource: oRowBinding,
+          fileName: "Materials.xlsx",
+          worker: false, // We need to disable worker because we are using a MockServer as OData Service
+        };
+
+        oSheet = new Spreadsheet(oSettings);
+        oSheet.build().finally(function () {
+          oSheet.destroy();
+        });
+      },
+      createColumnConfig: function () {
+        let aCols = [];
+        let EdmType = exportLibrary.EdmType;
+
+        aCols.push({
+          label: "Material number",
+          property: ["Matnr"],
+          type: EdmType.String,
+        });
+
+        aCols.push({
+          label: "Description",
+          type: EdmType.String,
+          property: "Maktx",
+          scale: 0,
+        });
+
+        aCols.push({
+          label: "Group",
+          type: EdmType.String,
+          property: "Matkl",
+          scale: 0,
+        });
+
+        aCols.push({
+          label: "Type",
+          type: EdmType.String,
+          property: "Mtart",
+          scale: 0,
+        });
+
+        aCols.push({
+          label: "Industry",
+          type: EdmType.String,
+          property: "Mbrsh",
+          scale: 0,
+        });
+
+        aCols.push({
+          label: "Base UoM",
+          type: EdmType.String,
+          property: "Meins",
+          scale: 0,
+        });
+
+        aCols.push({
+          label: "Purchase UoM",
+          type: EdmType.String,
+          property: "Bstme",
+          scale: 0,
+        });
+
+        return aCols;
       },
     });
   }
