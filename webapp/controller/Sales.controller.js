@@ -8,5 +8,13 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (BaseController) {
     onNavToMaterials: function (oEvent) {
       this.getOwnerComponent().getRouter().navTo("master");
     },
+    formatTime: function (timeValue) {
+      var timeInMilliseconds = timeValue.ms;
+      var date = new Date(timeInMilliseconds);
+
+      var formattedTimeUTC = date.toUTCString().split(" ")[4];
+
+      return formattedTimeUTC;
+    },
   });
 });
