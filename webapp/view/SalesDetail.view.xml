@@ -1,0 +1,82 @@
+<mvc:View
+    controllerName="ap.materialsales.controller.SalesDetail"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+>
+    <Page
+        id="page"
+        title="Sale items"
+    >
+        <content>
+            <Table
+                id="saleTable"
+                items="{/SaleSet('7')/ITEMS}"
+                headerText="Sale items"
+            >
+                <columns>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
+                        <VBox>
+                            <Text text="Sales number" />
+                        </VBox>
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
+                        <VBox>
+                            <Text text="Material number" />
+                        </VBox>
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
+                        <VBox>
+                            <Text text="Posnr" />
+                        </VBox>
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
+                        <VBox>
+                            <Text text="Description" />
+                        </VBox>
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="End"
+                    >
+                        <VBox>
+                            <Text text="Category" />
+                        </VBox>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem
+                        type="Active"
+                        vAlign="Middle"
+                    >
+                        <cells>
+                            <ObjectIdentifier title="{Vbeln}" />
+                            <Text text="{Matnr}" />
+                            <Text text="{Posnr}" />
+                            <Text text="{Arktx}" />
+                            <Text text="{Matkl}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

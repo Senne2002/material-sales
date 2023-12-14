@@ -8,7 +8,7 @@
         <content>
             <Button
                 icon="sap-icon://customer-and-contacts"
-                text="Nav to Customers"
+                text="Nav to Materials"
                 type="Transparent"
                 press="onNavToMaterials"
             />

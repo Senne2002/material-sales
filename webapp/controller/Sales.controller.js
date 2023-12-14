@@ -4,19 +4,24 @@ sap.ui.define(
     "sap/ui/Device",
     "sap/ui/model/Filter",
     "sap/ui/core/Fragment",
+    "sap/f/library",
   ],
-  function (BaseController, Device, Filter, Fragment) {
+  function (BaseController, Device, Filter, Fragment, fioriLibrary) {
     "use strict";
 
     return BaseController.extend("ap.materialsales.controller.App", {
       onInit: function () {
         this._mViewSettingsDialogs = {};
+        this.getOwnerComponent()
+          .getRouter()
+          .attachRouteMatched(this.onRouteMatched, this);
       },
 
       //routing to materials app
       onNavToMaterials: function (oEvent) {
         this.getOwnerComponent().getRouter().navTo("master");
       },
+
       formatTime: function (timeValue) {
         var timeInMilliseconds = timeValue.ms;
         var date = new Date(timeInMilliseconds);
@@ -69,6 +74,48 @@ sap.ui.define(
           this._mViewSettingsDialogs[sDialogFragmentName] = pDialog;
         }
         return pDialog;
+      },
+      //routing to detail page
+
+      //routing
+      onRouteMatched: function (oEvent) {
+        let oSettingsModel = this.getOwnerComponent().getModel("settings");
+        oSettingsModel.setProperty("/RouteName", oEvent.getParameter("name")),
+          oSettingsModel.setProperty(
+            "/Sale",
+            oEvent.getParameter("arguments").customer
+          );
+      },
+      onStateChanged: function (oEvent) {
+        let oSettingsModel = this.getOwnerComponent().getModel("settings");
+        let bIsNavigationArrow = oEvent.getParameter("isNavigationArrow"),
+          sLayout = oEvent.getParameter("layout");
+
+        // Replace the URL with the new layout if a navigation arrow was used
+        if (bIsNavigationArrow) {
+          this.oRouter.navTo(
+            oSettingsModel.getProperty("/RouteName"),
+            {
+              layout: sLayout,
+              customer: oSettingsModel.getProperty("/Sale"),
+            },
+            true
+          );
+        }
+      },
+      onExit: function () {
+        this.getOwnerComponent()
+          .getRouter()
+          .detachRouteMatched(this.onRouteMatched, this);
+      },
+      onListItemPress: function (oEvent) {
+        let sMaterialPath = oEvent.getSource().getBindingContext().getPath(),
+          oSelectedMaterial = sMaterialPath.split("'")[1];
+
+        this.getOwnerComponent().getRouter().navTo("salesdetail", {
+          layout: fioriLibrary.LayoutType.TwoColumnsMidExpanded,
+          sale: oSelectedMaterial,
+        });
       },
     });
   }

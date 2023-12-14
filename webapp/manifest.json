@@ -110,6 +110,11 @@
           "pattern": "sales",
           "name": "sales",
           "target": ["sales"]
+        },
+        {
+          "pattern": "salesdetail/{sale}/{layout}",
+          "name": "salesdetail",
+          "target": ["sales", "salesdetail"]
         }
       ],
       "targets": {
@@ -124,6 +129,10 @@
         "sales": {
           "viewName": "Sales",
           "controlAggregation": "beginColumnPages"
+        },
+        "salesdetail": {
+          "viewName": "SalesDetail",
+          "controlAggregation": "midColumnPages"
         }
       }
     },
