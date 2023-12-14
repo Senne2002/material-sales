@@ -1,7 +1,73 @@
-<mvc:View controllerName="ap.materialsales.controller.Material"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-        <content />
+<mvc:View
+    controllerName="ap.materialsales.controller.Material"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <Table
+                id="materialTable"
+                items="{/MaterialSet}"
+                headerText="Materials"
+            >
+                <columns>
+                    <Column width="12em">
+                        <VBox>
+                            <Text text="Material number" />
+                        </VBox>
+                    </Column>
+                    <Column width="12em">
+                        <VBox>
+                            <Text text="Description" />
+                        </VBox>
+                    </Column>
+                    <Column width="12em">
+                        <VBox>
+                            <Text text="Group" />
+                        </VBox>
+                    </Column>
+                    <Column width="12em">
+                        <VBox>
+                            <Text text="Type" />
+                        </VBox>
+                    </Column>
+                    <Column width="12em">
+                        <VBox>
+                            <Text text="Industry" />
+                        </VBox>
+                    </Column>
+                    <Column width="12em">
+                        <VBox>
+                            <Text text="Base UoM" />
+                        </VBox>
+                    </Column>
+                    <Column width="12em">
+                        <VBox>
+                            <Text text="Purchase UoM" />
+                        </VBox>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem
+                        type="Active"
+                        vAlign="Middle"
+                    >
+                        <cells>
+                            <ObjectIdentifier title="{Matnr}" />
+                            <Text text="{Maktx}" />
+                            <Text text="{Matkl}" />
+                            <Text text="{Mtart}" />
+                            <Text text="{Mbrsh}" />
+                            <Text text="{Meins}" />
+                            <Text text="{Bstme}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
     </Page>
 </mvc:View>
