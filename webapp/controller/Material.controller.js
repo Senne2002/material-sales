@@ -7,6 +7,7 @@ sap.ui.define(
     "sap/f/library",
     "sap/ui/export/Spreadsheet",
     "sap/ui/export/library",
+    "../util/SortAndFilterHelper",
   ],
   /**
    * @param {typeof sap.ui.core.mvc.Controller} Controller
@@ -18,7 +19,8 @@ sap.ui.define(
     Fragment,
     fioriLibrary,
     Spreadsheet,
-    exportLibrary
+    exportLibrary,
+    SortAndFilterHelper
   ) {
     "use strict";
 
@@ -198,6 +200,11 @@ sap.ui.define(
         });
 
         return aCols;
+      },
+
+      //filtering V2
+      handleFilterGo: function (oEvent) {
+        SortAndFilterHelper.handleFilterBarGo(this, "materialTable");
       },
     });
   }
