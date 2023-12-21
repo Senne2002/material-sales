@@ -5,22 +5,27 @@
     <ViewSettingsDialog confirm="handleFilterDialogConfirm">
         <filterItems>
             <ViewSettingsFilterItem
-                text="Material description"
+                text="Description"
                 key="Maktx"
                 multiSelect="false"
             >
                 <items>
                     <ViewSettingsItem
-                        text="Touring frame-red"
-                        key="touring frame-red"
+                        text="Pedal Assembly"
+                        key="Pedal Assembly"
                     />
                     <ViewSettingsItem
-                        text="Touring frame-black"
-                        key="touring frame-black"
+                        text="Touring Frame-Black"
+                        key="Touring Frame-Black"
                     />
                     <ViewSettingsItem
-                        text="T-shirt"
-                        key="t-shirt"
+                        text="Touring Frame-Black"
+                        key="Touring Frame-Black"
+                    />
+                    <ViewSettingsItem
+                        id="_IDGenViewSettingsItem6"
+                        text="Touring Handle Bar"
+                        key="Touring Handle Bar"
                     />
                 </items>
             </ViewSettingsFilterItem>
@@ -35,8 +40,20 @@
                         key="RAW"
                     />
                     <ViewSettingsItem
-                        text="OTH"
-                        key="OTH"
+                        text="BIKES"
+                        key="BIKES"
+                    />
+                    <ViewSettingsItem
+                        text="WHEEL"
+                        key="WHEEL"
+                    />
+                    <ViewSettingsItem
+                        text="UTIL"
+                        key="UTIL"
+                    />
+                    <ViewSettingsItem
+                        text="SFTY"
+                        key="SFTY"
                     />
                 </items>
             </ViewSettingsFilterItem>
@@ -51,8 +68,16 @@
                         key="ROH"
                     />
                     <ViewSettingsItem
-                        text="OTH"
-                        key="OTH"
+                        text="FERT"
+                        key="FERT"
+                    />
+                    <ViewSettingsItem
+                        text="HALB"
+                        key="HALB"
+                    />
+                    <ViewSettingsItem
+                        text="HAWA"
+                        key="HAWA"
                     />
                 </items>
             </ViewSettingsFilterItem>
@@ -67,8 +92,16 @@
                         key="M"
                     />
                     <ViewSettingsItem
-                        text="W"
-                        key="W"
+                        text="A"
+                        key="A"
+                    />
+                    <ViewSettingsItem
+                        text="1"
+                        key="1"
+                    />
+                    <ViewSettingsItem
+                        text="S"
+                        key="S"
                     />
                 </items>
             </ViewSettingsFilterItem>
